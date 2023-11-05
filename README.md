@@ -14,7 +14,7 @@ pip install lhsmdu
 ## 入力因子について、辞書型で書きます。  
 キーは因子名です。バリューはその因子の生成したい乱数の下限と上限を指定したタプルです。  
 例)  
-   input_factors = {
+   input_params = {
         "height": (50, 200),
         "width": (0.06, 0.1),
         "density": (1e15, 9e15),
