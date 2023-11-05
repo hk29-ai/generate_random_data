@@ -94,29 +94,29 @@ class BetaRandom(RandomSampler):
 
 def main():
     # モンテカルロ法
-    monte_carlo = MonteCarlo(input_factors, sampling_num, f'{now}_monte_carlo', 'winter')
+    monte_carlo = MonteCarlo(input_params, sampling_num, f'{now}_monte_carlo', 'winter')
     df1 = monte_carlo.generate_samples()
     print(df1)
 
     # ラテン超方格法
-    latin_hypercube  = LatinHypercube(input_factors, sampling_num, f'{now}_latin_hypercube', 'autumn')
+    latin_hypercube  = LatinHypercube(input_params, sampling_num, f'{now}_latin_hypercube', 'autumn')
     df2 = latin_hypercube.generate_samples()
     print(df2)
 
     # 正規乱数
-    normal_random = NormalRandom(input_factors, sampling_num, f'{now}_normal_random', 'gray')
+    normal_random = NormalRandom(input_params, sampling_num, f'{now}_normal_random', 'gray')
     df3 = normal_random.generate_samples()
     print(df3)
 
     # ベータ乱数
-    beta_random = BetaRandom(input_factors, sampling_num, f'{now}_beta_random', 'summer')
+    beta_random = BetaRandom(input_params, sampling_num, f'{now}_beta_random', 'summer')
     df4 = beta_random.generate_samples()
     print(df4)
     
 if __name__ == "__main__":
     # 作成するランダムデータを辞書型で作成する
     # キーは因子名、バリューはタプルで生成データの下限と上限を指定する
-    input_factors = {
+    input_params = {
         "height": (50, 200),
         "width": (0.06, 0.1),
         "density": (1e15, 9e15),
